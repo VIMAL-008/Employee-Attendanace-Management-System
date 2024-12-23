@@ -1,0 +1,80 @@
+PROJECT REPORT: EMPLOYEE ATTENDANCE SYSTEM USING SQL 
+
+1. INTRODUCTION:
+The Employee Attendance System is a database-driven system designed to manage employee attendance, track work hours, monitor leave requests, and generate detailed reports. It is a comprehensive solution aimed at automating the attendance management process, providing a streamlined approach for HR departments to monitor employee presence, leaves, and work hours. This project involves the creation of relational database tables, SQL queries, joins, subqueries, and stored procedures to handle various aspects of employee attendance efficiently.
+
+
+2. OBJECTIVE:
+The key objectives of the Employee Attendance System are as follows:
+
+1.Track Employee Attendance: Record employees’ clock-in and clock-out times.
+2.Manage Leave Requests: Enable employees to request leave and track leave status (informed, not informed).
+3.Generate Reports: Provide reports on total work hours, leave status, attendance per department, etc.
+4.Automate Attendance Calculations: Automatically calculate total work hours for each employee and department.
+5.Provide an Overview of Employee Availability: Track employee availability for work and manage resources efficiently.
+
+3.SYSTEM DESIGN:
+
+The system is based on a relational database model and consists of four main tables:
+Employees Table: Stores information about employees.
+Departments Table: Stores details of employee departments.
+AttendanceRecords Table: Stores records of employee clock-ins and clock-outs.
+LeaveRequests Table: Stores employee leave requests and their statuses
+
+3.1. Entity-Relationship Diagram (ERD)
+An ERD was created to model the relationships between the tables,
+
+1.Department.
+2.Employees.
+2.AttendanceRecords.
+3.LeaveRequests.
++--------------------+       +--------------------+
+|   Departments      |       |     Employees      |
+|--------------------|       |--------------------|
+| Dept_id (PK)       | <-----| Emp_id (PK)        |
+| Dept_Name          |       | Emp_name           |
++--------------------+       | Dept_id (FK)       |
+                             | Date_Of_Joining    |
+                             +--------------------+
+                                  | 1:M
+                                  |
+                                  |
+                             +--------------------+
+                             | Attendance Records |
+                             |--------------------|
+                             | Attendance_id (PK) |
+                             | Emp_id (FK)        |
+                             | ClockIn_Time       |
+                             | ClockOut_Time      |
+                             | WorkHours          |
+                             | Attendance_Date    |
+                             +--------------------+
+                                  | 1:M
+                                  |
+                                  |
+                             +--------------------+
+                             |   Leave Requests   |
+                             |--------------------|
+                             | LeaveRequest_ID (PK)|
+                             | Emp_id (FK)        |
+                             | LeaveType          |
+                             | LeaveStartDate     |
+                             | LeaveEndDate       |
+                             | LeaveStatus        |
+                             +--------------------+
+
+
+6. BENIFITS OF THE SYSTEM:
+Efficiency:
+1.Automates attendance tracking
+2.Eliminating manual errors
+3.Time-consuming processes.
+Accurate Reports:
+ 1.Generates detailed reports on work hours
+2. days, and attendance, aiding HR in payroll and resource planning.
+Improved Leave Management:
+    Efficiently tracks and manages employee leave requests, providing an easy-to-use system for both employees and managers.
+
+CONCLUSION
+The Employee Attendance System using SQL provides an efficient, automated solution to track employee attendance, manage leave requests, and generate insightful reports. The use of SQL joins, subqueries, and stored procedures allows for flexible and efficient data retrieval and processing. The system can be further enhanced with features like holiday management, shift tracking, and integration with payroll systems.
+
